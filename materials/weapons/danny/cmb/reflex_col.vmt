@@ -6,7 +6,7 @@ VertexLitGeneric
 	"$envmapmask" "weapons\danny\cmb\reflex_spec"
 
 	"$normalmapalphaenvmapmask" 1
-	"$phong" 1
+	"$phong" 0
 	"$phongexponent" 65
 	"$phongboost" 5
 	"$phongfresnelranges" "[0.1 0.5 0.1]"
