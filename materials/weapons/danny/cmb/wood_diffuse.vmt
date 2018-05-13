@@ -1,0 +1,19 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\wood_diffuse"
+	"$bumpmap"     "weapons\danny\cmb\wood_normal"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "weapons\danny\cmb\wood_spec"
+
+	"$normalmapalphaenvmapmask" 1
+	"$phong" 1
+	"$phongexponent" 45
+	"$phongboost" 1
+	"$phongfresnelranges" "[0.3 0.3 0.3]"
+	"$envmaptint" "[0.001 0.001 0.001]"
+
+	$phongalbedotint 1
+	$halflambert 1
+}
+
+

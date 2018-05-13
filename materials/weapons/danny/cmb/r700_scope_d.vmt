@@ -1,0 +1,19 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\r700_scope_d"
+	"$bumpmap"     "weapons\danny\cmb\r700_scope_n"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "weapons\danny\cmb\r700_scope_m"
+
+	"$normalmapalphaenvmapmask" 1
+	"$phong" 1
+	"$phongexponent" 10
+	"$phongboost" 3
+	"$phongfresnelranges" "[1 1 1]"
+	$envmaptint "[0.04 0.04 0.04]"
+
+	$phongalbedotint 1
+	$halflambert 1
+}
+
+

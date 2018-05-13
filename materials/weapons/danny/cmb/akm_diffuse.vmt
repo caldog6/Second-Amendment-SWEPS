@@ -1,0 +1,19 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\akm_diffuse"
+	"$bumpmap"     "weapons\danny\cmb\akm_normal"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "weapons\danny\cmb\akm_spec"
+
+	"$normalmapalphaenvmapmask" 1
+	"$phong" 1
+	"$phongexponent" 45
+	"$phongboost" 1
+	"$phongfresnelranges" "[2 2 2]"
+	"$envmaptint" "[0.001 0.001 0.001]"
+
+	$phongalbedotint 1
+	$halflambert 1
+}
+
+

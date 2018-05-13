@@ -1,0 +1,8 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\lens_col"
+	"$bumpmap"     "weapons\danny\cmb\lens_nor"
+	"$additive" 1
+}
+
+

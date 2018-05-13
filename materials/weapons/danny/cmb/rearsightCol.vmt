@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\rearsightCol"
+	"$bumpmap"     "weapons\danny\cmb\rearsightNor"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "weapons\danny\cmb\rearsightSpec"
+
+	"$normalmapalphaenvmapmask" 1
+	"$phong" 1
+	"$phongexponent" 15
+	"$phongboost" 1
+	"$phongfresnelranges" "[0.1 0.5 0.1]"
+	"$envmaptint" "[0.001 0.001 0.001]"
+ 
+
+	$phongalbedotint 1
+	$halflambert 1
+}
+
+

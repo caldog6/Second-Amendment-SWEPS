@@ -1,0 +1,18 @@
+VertexLitGeneric
+{
+	"$basetexture" "weapons\danny\cmb\UZI"
+	"$bumpmap"     "weapons\danny\cmb\UZI_Normal"
+	"$envmap" "env_cubemap"
+
+	"$normalmapalphaenvmapmask" 1
+	"$phong" 1
+	"$phongexponent" 15
+	"$phongboost" 1
+	"$phongfresnelranges" "[1 1 1]"
+	$envmaptint "[0.01 0.01 0.01]"
+
+	$phongalbedotint 1
+	$halflambert 1
+}
+
+

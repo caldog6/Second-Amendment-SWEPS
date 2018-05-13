@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "cmb/lensmask"
+	"$nocull" 1
+	"$nodecal" 1
+	"$translucent" 1
+}
