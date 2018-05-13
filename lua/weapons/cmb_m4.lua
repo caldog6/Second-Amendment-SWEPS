@@ -14,7 +14,7 @@ SWEP.Primary.Spread 	= 0
 SWEP.Primary.RPM 		= 790
 SWEP.Primary.Force 		= 4
 
-SWEP.Primary.MagSize		= 32
+SWEP.Primary.MagSize		= 30
 SWEP.Primary.DefaultClip	= 0
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "cmb_556"
@@ -59,7 +59,7 @@ SWEP.VMData = {
 	["Matrix"] = {
 		["Aim"] = {
 			["Pos"] = Vector(-2.9,-5,0.1),
-			["Ang"] = Vector(0.15,-0.8,0)
+            ["Ang"] = Vector(0.15,-0.8,0)
 		},
 		["Sprint"] = {
 			["Pos"] = Vector(0,0,0),
