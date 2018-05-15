@@ -5,7 +5,7 @@ SecondAmendment.AddSound("UZI", "BoltBack", "weapons/cmb/uzi/boltback.wav")
 SecondAmendment.AddSound("UZI", "BoltForward", "weapons/cmb/uzi/boltforward.wav")
 SecondAmendment.AddSound("UZI", "Tap", "weapons/cmb/uzi/tap.wav")
 
-SecondAmendment.AddSound("M4", "Fire", "weapons/cmb/m4/fire.wav")
+SecondAmendment.AddSound("M4", "Fire", "weapons/cmb/m4/fire1.wav", "weapons/cmb/m4/fire2.wav", "weapons/cmb/m4/fire3.wav" )
 SecondAmendment.AddSound("M4", "ClipOut", "weapons/cmb/m4/magout.wav")
 SecondAmendment.AddSound("M4", "ClipIn", "weapons/cmb/m4/magin.wav")
 SecondAmendment.AddSound("M4", "BoltBack", "weapons/cmb/m4/boltback.wav")

@@ -1,5 +1,5 @@
 SWEP.PrintName			= "AKM"	
-SWEP.Slot				= 3
+SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
 SWEP.Base				= "cmb_base"
@@ -7,7 +7,7 @@ SWEP.Category			= "Second Amendment"
 
 SWEP.Spawnable			= true
 
-SWEP.Primary.Damage		= 35
+SWEP.Primary.Damage		= 45
 SWEP.Primary.NumShots	= 1
 SWEP.Primary.Cone		= 0
 SWEP.Primary.Spread 	= 0
@@ -91,15 +91,15 @@ SWEP.VMData = {
 SWEP.ViewModel = SWEP.VMData.Model
 SWEP.WorldModel = "models/weapons/danny/cmb/w_cmb_akm.mdl"
 
-SWEP.HipRecoil		= 0.7
-SWEP.AimRecoil		= 0.5
-SWEP.HipSpread		= 0.01
+SWEP.HipRecoil		= 1.6
+SWEP.AimRecoil		= 1.3
+SWEP.HipSpread		= 0.005
 SWEP.AimSpread		= 0
 SWEP.HipVelSpread	= 1.5
 SWEP.AimVelSpread	= 0.8
-SWEP.HipSpreadAdd	= 0.35
-SWEP.AimSpreadAdd	= 0.2
-SWEP.CrouchAccuracy = 0.6
+SWEP.HipSpreadAdd	= 0.65
+SWEP.AimSpreadAdd	= 0.25
+SWEP.CrouchAccuracy = 0.7
 SWEP.DeployTime 	= 0.6
 
 SWEP.DotSight 		= false

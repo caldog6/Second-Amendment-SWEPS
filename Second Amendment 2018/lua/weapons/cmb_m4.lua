@@ -1,5 +1,5 @@
-SWEP.PrintName			= "AR-15"	
-SWEP.Slot				= 3
+SWEP.PrintName			= "M4 Carbine"	
+SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
 SWEP.Base				= "cmb_base"
@@ -7,11 +7,11 @@ SWEP.Category			= "Second Amendment"
 
 SWEP.Spawnable			= true
 
-SWEP.Primary.Damage		= 22
+SWEP.Primary.Damage		= 30
 SWEP.Primary.NumShots	= 1
 SWEP.Primary.Cone		= 0
 SWEP.Primary.Spread 	= 0
-SWEP.Primary.RPM 		= 790
+SWEP.Primary.RPM 		= 950
 SWEP.Primary.Force 		= 4
 
 SWEP.Primary.MagSize		= 30
@@ -83,14 +83,14 @@ SWEP.VMData = {
 SWEP.ViewModel = SWEP.VMData.Model
 SWEP.WorldModel = "models/weapons/danny/cmb/w_cmb_m4.mdl"
 
-SWEP.HipRecoil		= 0.5
-SWEP.AimRecoil		= 0.4
-SWEP.HipSpread		= 0.005
+SWEP.HipRecoil		= 1.2
+SWEP.AimRecoil		= 0.9
+SWEP.HipSpread		= 0.01
 SWEP.AimSpread		= 0
 SWEP.HipVelSpread	= 1
-SWEP.AimVelSpread	= 0.5
-SWEP.HipSpreadAdd	= 0.35
-SWEP.AimSpreadAdd	= 0.2
+SWEP.AimVelSpread	= 0.4
+SWEP.HipSpreadAdd	= 0.40
+SWEP.AimSpreadAdd	= 0.15
 SWEP.CrouchAccuracy = 0.7
 SWEP.DeployTime 	= 0.6
 
