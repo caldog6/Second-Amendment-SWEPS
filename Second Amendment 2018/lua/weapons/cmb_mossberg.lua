@@ -1,5 +1,5 @@
 SWEP.PrintName			= "Mossberg M500"	
-SWEP.Slot				= 2
+SWEP.Slot				= 3
 SWEP.SlotPos			= 1
 
 SWEP.Base				= "cmb_base"
@@ -7,12 +7,12 @@ SWEP.Category			= "Second Amendment"
 
 SWEP.Spawnable			= true
 
-SWEP.Primary.Damage		= 12
-SWEP.Primary.NumShots	= 8
+SWEP.Primary.Damage		= 20
+SWEP.Primary.NumShots	= 12
 SWEP.Primary.Cone		= 0
 SWEP.Primary.Spread 	= 0
 SWEP.Primary.RPM 		= 600
-SWEP.Primary.Force 		= 5
+SWEP.Primary.Force 		= 2
 
 SWEP.Primary.MagSize		= 6
 SWEP.Primary.DefaultClip	= 6
@@ -104,8 +104,8 @@ SWEP.PumpTime = 0.4
 
 SWEP.HipRecoil		= 2.5
 SWEP.AimRecoil		= 2
-SWEP.HipSpread		= 0.017
-SWEP.AimSpread		= 0.017
+SWEP.HipSpread		= 0.057
+SWEP.AimSpread		= 0.057
 SWEP.HipVelSpread	= 0
 SWEP.AimVelSpread	= 0
 SWEP.HipSpreadAdd	= 0
