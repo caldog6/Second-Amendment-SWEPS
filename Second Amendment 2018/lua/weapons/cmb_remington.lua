@@ -7,12 +7,12 @@ SWEP.Category			= "Second Amendment"
 
 SWEP.Spawnable			= true
 
-SWEP.Primary.Damage		= 144
+SWEP.Primary.Damage		= 175
 SWEP.Primary.NumShots	= 1
 SWEP.Primary.Cone		= 0
 SWEP.Primary.Spread 	= 0
 SWEP.Primary.RPM 		= 600
-SWEP.Primary.Force 		= 6
+SWEP.Primary.Force 		= 7
 
 SWEP.Primary.MagSize		= 5
 SWEP.Primary.DefaultClip	= 5
@@ -99,13 +99,13 @@ SWEP.UseMagazine = true
 SWEP.PumpAction = true
 SWEP.PumpTime = 1
 
-SWEP.HipRecoil		= 3
-SWEP.AimRecoil		= 2
+SWEP.HipRecoil		= 4
+SWEP.AimRecoil		= 3
 SWEP.HipSpread		= 0.02
 SWEP.AimSpread		= 0
 SWEP.HipVelSpread	= 5
 SWEP.AimVelSpread	= 0.5
-SWEP.HipSpreadAdd	= 0
+SWEP.HipSpreadAdd	= 0.008
 SWEP.AimSpreadAdd	= 0
 SWEP.CrouchAccuracy = 0.8
 SWEP.DeployTime 	= 0.4

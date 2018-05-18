@@ -7,7 +7,7 @@ SWEP.Category			= "Second Amendment"
 
 SWEP.Spawnable			= true
 
-SWEP.Primary.Damage		= 70
+SWEP.Primary.Damage		= 83
 SWEP.Primary.NumShots	= 1
 SWEP.Primary.Cone		= 0
 SWEP.Primary.Spread 	= 0
@@ -99,14 +99,14 @@ SWEP.HoldTypes = {
 SWEP.ViewModel = SWEP.VMData.Model
 SWEP.WorldModel = "models/weapons/danny/cmb/w_cmb_browning.mdl"
 
-SWEP.HipRecoil		= 3
-SWEP.AimRecoil		= 3
-SWEP.HipSpread		= 0.005
+SWEP.HipRecoil		= 5
+SWEP.AimRecoil		= 4
+SWEP.HipSpread		= 0
 SWEP.AimSpread		= 0
 SWEP.HipVelSpread	= 4
 SWEP.AimVelSpread	= 4
-SWEP.HipSpreadAdd	= 0.5
-SWEP.AimSpreadAdd	= 0.2
+SWEP.HipSpreadAdd	= 0.55
+SWEP.AimSpreadAdd	= 0.25
 SWEP.CrouchAccuracy = 0.8
 SWEP.DeployTime 	= 0.2
 

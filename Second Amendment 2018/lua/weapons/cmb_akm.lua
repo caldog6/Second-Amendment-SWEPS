@@ -1,4 +1,4 @@
-SWEP.PrintName			= "AKM"	
+SWEP.PrintName			= "Kalashnikov AKM"	
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 

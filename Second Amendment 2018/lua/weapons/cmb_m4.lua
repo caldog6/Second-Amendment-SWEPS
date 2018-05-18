@@ -1,4 +1,4 @@
-SWEP.PrintName			= "M4 Carbine"	
+SWEP.PrintName			= "Colt M4 Carbine"	
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 

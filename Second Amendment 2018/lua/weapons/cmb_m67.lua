@@ -14,7 +14,7 @@ SWEP.Primary.Spread 	= 0
 SWEP.Primary.RPM 		= 500
 
 SWEP.Primary.MagSize		= 1
-SWEP.Primary.DefaultClip	= 3
+SWEP.Primary.DefaultClip	= 5
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "cmb_m67"
 
