@@ -32,14 +32,13 @@ SWEP.CustomRecoilAimMultiplier = 0.1
 
 SWEP.VMData = {
 	["Model"] = "models/gmod4phun/weapons/c_kimber_kec.mdl",
-
 	["Anim"] = {
 		["Draw"] = "draw",
 		["Fire"] = "hip_shoot",
 		["Reload"] = "reload",
 		["HipReload"] = "hip_reload",
 		["FullReload"] = "reload_full",
-		["FullHipReload"] = "hip_reload_full",
+		["FullHipReload"] = "reload_full",
 		["Hip"] = "origin_to_hip",
 		["Origin"] = "hip_to_origin",
 		["Sprint"] = "sprint",
@@ -54,11 +53,16 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_Browning.MagOut"},
 			{time = 1.1, snd = "CMB_Browning.MagIn"}
 		},
+		["FullHipReload"] = {
+			{time = 0.3, snd = "CMB_Browning.MagOut"},
+			{time = 1, snd = "CMB_Browning.MagIn"},
+			{time = 1.3, snd = "CMB_Browning.SlideRelease"}
+		},
 		["FullReload"] = {
 			{time = 0.3, snd = "CMB_Browning.MagOut"},
 			{time = 1, snd = "CMB_Browning.MagIn"},
-			{time = 1.3, snd = "CMB_Browning.SlideRelease"},
-			{time = 1.4, callback = SWEP.SlideCall}
+			{time = 1.8, snd = "CMB_Browning.SlideBack"},
+			{time = 2, snd = "CMB_Browning.SlideRelease"},
 		},
 	},
 

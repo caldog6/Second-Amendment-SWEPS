@@ -25,7 +25,7 @@ SWEP.FullReloadLength	= 3
 SWEP.SprintSeed = 5
 
 SWEP.VMData = {
-	["Model"] = "models/weapons/danny/cmb/v_cmb_spas12.mdl",
+	["Model"] = "models/viper/v_cmb_spas12.mdl",
 
 	["Anim"] = {
 		["Draw"] = "draw",

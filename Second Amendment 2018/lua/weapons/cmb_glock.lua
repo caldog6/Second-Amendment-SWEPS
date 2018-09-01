@@ -31,7 +31,7 @@ end
 SWEP.CustomRecoilAimMultiplier = 0.1
 
 SWEP.VMData = {
-	["Model"] = "models/weapons/danny/cmb/v_cmb_glock.mdl",
+	["Model"] = "models/viper/v_cmb_glock.mdl",
 
 	["Anim"] = {
 		["Draw"] = "draw",
@@ -39,7 +39,7 @@ SWEP.VMData = {
 		["Reload"] = "reload",
 		["HipReload"] = "hip_reload",
 		["FullReload"] = "reload_full",
-		["FullHipReload"] = "hip_reload_full",
+		["FullHipReload"] = "reload_full",
 		["Hip"] = "origin_to_hip",
 		["Origin"] = "hip_to_origin",
 		["Sprint"] = "sprint",
@@ -54,18 +54,23 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_Browning.MagOut"},
 			{time = 1.1, snd = "CMB_Browning.MagIn"}
 		},
+		["FullHipReload"] = {
+			{time = 0.3, snd = "CMB_Browning.MagOut"},
+			{time = 1, snd = "CMB_Browning.MagIn"},
+			{time = 1.3, snd = "CMB_Browning.SlideRelease"}
+		},
 		["FullReload"] = {
 			{time = 0.3, snd = "CMB_Browning.MagOut"},
 			{time = 1, snd = "CMB_Browning.MagIn"},
-			{time = 1.3, snd = "CMB_Browning.SlideRelease"},
-			{time = 1.4, callback = SWEP.SlideCall}
+			{time = 1.8, snd = "CMB_Browning.SlideBack"},
+			{time = 2, snd = "CMB_Browning.SlideRelease"},
 		},
 	},
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-2.75,-5,0.85),
-			["Ang"] = Vector(0,0.75,0)
+			["Pos"] = Vector(-2.38,-2,0.5),
+			["Ang"] = Vector(1,1.25,0)
 		},
 		["Sprint"] = {
 			["Pos"] = Vector(0,0,0),

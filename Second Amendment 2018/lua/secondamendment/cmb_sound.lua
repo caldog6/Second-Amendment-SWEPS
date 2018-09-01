@@ -24,6 +24,7 @@ SecondAmendment.AddSound("Browning", "Fire", "weapons/cmb/browning/browning_fp.w
 SecondAmendment.AddSound("Browning", "MagOut", "weapons/cmb/browning/browning_magout.wav")
 SecondAmendment.AddSound("Browning", "MagIn", "weapons/cmb/browning/browning_maghit.wav")
 SecondAmendment.AddSound("Browning", "SlideRelease", "weapons/cmb/browning/browning_boltrelease.wav")
+SecondAmendment.AddSound("Browning", "SlideBack", "weapons/cmb/browning/browning_boltback.wav")
 
 SecondAmendment.AddSound("Mossberg", "Fire", "weapons/cmb/mossberg/fire.wav")
 SecondAmendment.AddSound("Mossberg", "PumpBack", "weapons/cmb/mossberg/pumpback.wav")
