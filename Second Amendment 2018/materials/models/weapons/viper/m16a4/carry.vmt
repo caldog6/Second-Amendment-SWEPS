@@ -1,0 +1,25 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\viper\m16a4\carry"
+	"$bumpmap" "models\weapons\viper\m16a4\carry_normal"
+	"$phongexponenttexture" "models\weapons\viper\m16a4\carry_spec"
+
+	"$normalmapalphaenvmapmask" "1"
+	"$envmap" "env_cubemap"
+	"$envmapcontrast" "15"
+	"$envmaptint" "[ 0.02 0.02 0.02 ]"
+
+	"$halflambert" "1"
+
+	"$phongalbedotint" "1"
+	"$phong"     "1"
+	"$phongboost"   "3"
+	"$phongfresnelranges"   "[0.48 2 2.5]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "100"	
+	"$rimlightboost" "0.25"
+	"$rimmask" "1"
+
+}
+
