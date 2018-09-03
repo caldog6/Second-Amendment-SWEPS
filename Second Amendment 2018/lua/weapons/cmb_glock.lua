@@ -31,7 +31,7 @@ end
 SWEP.CustomRecoilAimMultiplier = 0.1
 
 SWEP.VMData = {
-	["Model"] = "models/viper/v_cmb_glock.mdl",
+	["Model"] = "models/viper/glock19.mdl",
 
 	["Anim"] = {
 		["Draw"] = "draw",
@@ -69,8 +69,8 @@ SWEP.VMData = {
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-2.38,-2,0.6),
-			["Ang"] = Vector(1,1.65,0)
+			["Pos"] = Vector(-2.855,-2,0.6),
+			["Ang"] = Vector(1,0.45,0)
 		},
 		["Sprint"] = {
 			["Pos"] = Vector(0,0,0),
