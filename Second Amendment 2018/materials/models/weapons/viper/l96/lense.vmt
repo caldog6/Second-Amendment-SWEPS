@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/weapons/viper/l96/lens"
+	"$translucent" "0"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+}

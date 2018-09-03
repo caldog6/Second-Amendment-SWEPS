@@ -69,7 +69,7 @@ SWEP.VMData = {
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-2.65,-6,0.5),
+			["Pos"] = Vector(-2.61,-6,0.543),
 			["Ang"] = Vector(0,0,0)
 		},
 		["Sprint"] = {

@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+		//defining texture sheets
+		$basetexture				"models/weapons/viper/ru556/Magazine"
+$translucent 1
+}

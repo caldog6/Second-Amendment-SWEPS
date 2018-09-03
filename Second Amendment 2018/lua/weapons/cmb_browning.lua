@@ -31,7 +31,7 @@ end
 SWEP.CustomRecoilAimMultiplier = 0.1
 
 SWEP.VMData = {
-	["Model"] = "models/weapons/danny/cmb/v_cmb_browning.mdl",
+	["Model"] = "models/viper/browninghp.mdl",
 
 		["Anim"] = {
 		["Draw"] = "draw",
@@ -69,8 +69,8 @@ SWEP.VMData = {
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-2.95,-3,0.65),
-			["Ang"] = Vector(0.3,0,0)
+			["Pos"] = Vector(-2.875,-3,0.22),
+			["Ang"] = Vector(1.7,0.2,0)
 		},
 		["Sprint"] = {
 			["Pos"] = Vector(0,0,0),
