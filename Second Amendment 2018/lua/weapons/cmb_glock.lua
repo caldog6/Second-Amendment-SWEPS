@@ -19,7 +19,7 @@ SWEP.Primary.DefaultClip	= 0
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "cmb_9mm"
 
-SWEP.ReloadLength 		= 1.5
+SWEP.ReloadLength 		= 2
 SWEP.FullReloadLength	= 2
 
 function SWEP:SlideCall()
