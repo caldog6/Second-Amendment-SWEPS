@@ -138,6 +138,10 @@ SWEP.AimSpeed 		= 0.6
 SWEP.DotSight 		= false
 SWEP.WallDistance	= 50
 
+SWEP.UseParticleMuzzle = false // set this to true if you want to disable the default muzzle effect and use particles as muzzle instead
+SWEP.ParticleMuzzle = {"particle1", "particle2", "particle3"} // table of particles, or can be a single string
+SWEP.ParticleMuzzleToStop = "particle3" // same thing, either a table or a single string, these particles get stopped when firing the next shot (best used on muzzle smoke to prevent unrealistic ammounts of it)
+
 function SWEP:SetNextFire(time) self:SetNextPrimaryFire(CurTime() + time) end
 function SWEP:GetNextFire() return self:GetNextPrimaryFire() end
 
@@ -507,6 +511,7 @@ function SWEP:CanFire()
 	return !(self:GetSprinting() or self:GetReloading())
 end
 
+
 function SWEP:PrimaryAttack()
 	if self:Clip1() <= 0 or !self:CanFire() or !self:GetAiming() or (self.PumpAction and self:GetPump()) then return end
 
@@ -523,11 +528,16 @@ function SWEP:PrimaryAttack()
 				self:EmitShell()
 			end
 			
-
-			local effectdata = EffectData()
-			effectdata:SetEntity(self)
-			effectdata:SetAttachment(1)
-			util.Effect("cmb_muzzleflash", effectdata)
+			self:StopParticleMuzzle()
+			
+			if self.UseParticleMuzzle then
+				self:PerformParticleMuzzle()
+			else
+				local effectdata = EffectData()
+				effectdata:SetEntity(self)
+				effectdata:SetAttachment(1)
+				util.Effect("cmb_muzzleflash", effectdata)
+			end
 		end
 	end
 	
@@ -585,10 +595,119 @@ function SWEP:PlayAnimation(seq, speed, cycle)
 		vm:SetCycle(cycle)
 		vm:SetPlaybackRate(speed)
 	elseif SP and SERVER then
-		umsg.Start("CMB_PLAYANIM", self.Owner)
-			umsg.String(seq)
-			umsg.Float(speed)
-			umsg.Float(cycle)
-		umsg.End()
+		if self.Owner and IsValid(self.Owner) then
+			umsg.Start("CMB_PLAYANIM", self.Owner)
+				umsg.String(seq)
+				umsg.Float(speed)
+				umsg.Float(cycle)
+			umsg.End()
+		end
 	end
+end
+
+function SWEP:PerformParticleMuzzle()
+	if SP and SERVER then
+		if !self.Owner:IsPlayer() then return end
+		SendUserMessage("CMB_PARTICLE_MUZZLE_EFFECTS_UMSG", self.Owner)
+		return
+	end
+	
+	self:_performParticleMuzzle()
+end
+
+function SWEP:_performParticleMuzzle()
+	if SERVER then return end
+	
+	if self.Owner:ShouldDrawLocalPlayer() then
+		return
+	end
+	
+	local vm = self.vm
+	if !IsValid(vm) then return end
+	
+	local muz = vm:GetAttachment(1)
+	if !muz then return end
+	
+	local muzTab = self.ParticleMuzzle
+	if !muzTab then return end
+	
+	// either list of particles, or just a single particle
+	if type(muzTab) == "table" then
+		for _, particle in pairs(muzTab) do
+			if type(particle) == "string" then
+				ParticleEffectAttach(particle, PATTACH_POINT_FOLLOW, vm, 1)
+			end
+		end
+	elseif type(muzTab) == "string" then
+		ParticleEffectAttach(muzTab, PATTACH_POINT_FOLLOW, vm, 1)
+	end
+	
+	local dlight = DynamicLight(self:EntIndex())
+	dlight.r = 250
+	dlight.g = 250
+	dlight.b = 50
+	dlight.Brightness = 5
+	dlight.Pos = muz.Pos + self.Owner:GetAimVector() * 3
+	dlight.Size = 128
+	dlight.Decay = 1000
+	dlight.DieTime = CurTime() + 1
+end
+
+function SWEP:StopParticleMuzzle()
+	if SP and SERVER then
+		if !self.Owner:IsPlayer() then return end
+		SendUserMessage("CMB_STOPVMPARTICLES_UMSG", self.Owner)
+		return
+	end
+	self:_stopParticleMuzzle()
+end
+
+function SWEP:_stopParticleMuzzle()
+	if SERVER then return end
+	
+	local muzTab = self.ParticleMuzzleToStop
+	if !muzTab then return end
+	
+	local vm = self.vm
+	if !IsValid(vm) then return end
+	
+	if type(muzTab) == "table" then
+		for _, particle in pairs(muzTab) do
+			if type(particle) == "string" then
+				vm:StopParticlesNamed(particle)
+			end
+		end
+	elseif type(muzTab) == "string" then
+		vm:StopParticlesNamed(muzTab)
+	end
+end
+
+if CLIENT then
+	local function CMB_PARTICLE_MUZZLE_EFFECTS()
+		local ply = LocalPlayer()
+		if !IsValid(ply) then return end
+		
+		local wep = ply:GetActiveWeapon()
+		
+		if not IsValid(wep) or not wep.SecondAmendment then
+			return
+		end
+		
+		wep:_performParticleMuzzle()
+	end
+	usermessage.Hook("CMB_PARTICLE_MUZZLE_EFFECTS_UMSG", CMB_PARTICLE_MUZZLE_EFFECTS)
+	
+	local function CMB_STOPVMPARTICLES()
+		local ply = LocalPlayer()
+		if !IsValid(ply) then return end
+		
+		local wep = ply:GetActiveWeapon()
+		
+		if not IsValid(wep) or not wep.SecondAmendment then
+			return
+		end
+		
+		wep:_stopParticleMuzzle()
+	end
+	usermessage.Hook("CMB_STOPVMPARTICLES_UMSG", CMB_STOPVMPARTICLES)
 end
