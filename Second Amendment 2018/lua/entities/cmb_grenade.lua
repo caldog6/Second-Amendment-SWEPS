@@ -33,7 +33,7 @@ function ENT:Initialize()
 		self:SetSolid(SOLID_VPHYSICS)
 		self:SetCollisionGroup(COLLISION_GROUP_NONE)
 	
-		self:PhysicsInitSphere(1, "metal_bouncy")
+		self:PhysicsInitSphere(0.01, "metal_bouncy")
 		
 		local phys = self:GetPhysicsObject()
 		
@@ -42,7 +42,7 @@ function ENT:Initialize()
 			phys:SetMass(5)
 			phys:EnableDrag(true)
 			phys:EnableGravity(true)
-			phys:SetBuoyancyRatio(5)
+			phys:SetBuoyancyRatio(1)
 			phys:AddAngleVelocity(VectorRand()*300)
 		end
 	end

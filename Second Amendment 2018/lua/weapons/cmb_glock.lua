@@ -151,3 +151,8 @@ function SWEP:Holster()
 	self._slide = true
 	return true
 end
+
+function SWEP:MagReload()
+	self:SetAiming(true)
+	self.BaseClass.MagReload(self)
+end

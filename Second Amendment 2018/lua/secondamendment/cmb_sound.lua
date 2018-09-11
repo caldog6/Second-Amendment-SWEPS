@@ -26,6 +26,10 @@ SecondAmendment.AddSound("STG", "ClipIn", "weapons/cmb/stg/magin.wav")
 SecondAmendment.AddSound("STG", "BoltBack", "weapons/cmb/stg/boltback.wav")
 SecondAmendment.AddSound("STG", "BoltForward", "weapons/cmb/stg/boltrelease.wav")
 
+SecondAmendment.AddSound("MP5SD", "Fire", "weapons/cmb/mp5sd/fire.wav")
+SecondAmendment.AddSound("MP5SD", "ClipOut", "weapons/cmb/mp5sd/magout.wav")
+SecondAmendment.AddSound("MP5SD", "ClipIn", "weapons/cmb/mp5sd/magin.wav")
+
 SecondAmendment.AddSound("Browning", "Fire", "weapons/cmb/browning/browning_fp.wav")
 SecondAmendment.AddSound("Browning", "MagOut", "weapons/cmb/browning/browning_magout.wav")
 SecondAmendment.AddSound("Browning", "MagIn", "weapons/cmb/browning/browning_maghit.wav")
