@@ -18,7 +18,7 @@ if CLIENT then
 			local FT, CT = FrameTime(), CurTime()
 
 			local alpha_scope = self.ScopeAlpha or 255
-				
+
 			if SecondAmendment.CVar["view_blur"]:GetBool() then
 				self.BlurAmount = math.Approach(self.BlurAmount, (self:GetReloading() and 5 or 0) + (255-alpha_scope)*5/255, FT*50)
 			else
@@ -54,7 +54,7 @@ function SWEP:DrawViewModel()
 
 	render.ClearStencil()
 	render.SetStencilEnable(true)
-	
+
 	render.SetStencilFailOperation(STENCILOPERATION_KEEP)
 	render.SetStencilZFailOperation(STENCILOPERATION_KEEP)
 	render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
@@ -69,11 +69,11 @@ function SWEP:DrawViewModel()
 	end
 
 	render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
-		
+
 	cam.Start2D()
 		DrawToyTown(vm.blur, ScrH()/2)
 	cam.End2D()
-		
+
 	render.SetStencilEnable(false)
 end
 
@@ -143,18 +143,18 @@ function SWEP:CalcVMMatrix()
 	local Sprinting = self:GetSprinting()
 	local Crouching = self.Owner:Crouching() or self.Owner:KeyDown(IN_DUCK)
 	local Airborne = !self.Owner:OnGround() and self.Owner:GetMoveType() != MOVETYPE_NOCLIP
-		
+
 	if last_Sprint != Sprinting and Sprinting then
 		curStep = self.SprintSeed
 	end
-	
+
 	PA = self.Owner:GetViewPunchAngles()
-	
+
 	local CustomAimMul = (Aiming and Hip) and self.CustomRecoilAimMultiplier or 1
-	
+
 	self.CustomRecoil[1] = self.VMData["Matrix"]["Recoil"]["Pos"] * PA.p * CustomAimMul
 	self.CustomRecoil[2] = self.VMData["Matrix"]["Recoil"]["Ang"] * PA.p * CustomAimMul
-	
+
 	last_Sprint = Sprinting
 
 	curStep = curStep + (vel/math.pi)*(FT*50)
@@ -163,7 +163,7 @@ function SWEP:CalcVMMatrix()
 	idle_mul = int(FT*5, idle_mul, (Aiming and Hip) and 0.05 or Aiming and 1 or 2)
 	run_mul = int(FT*5, run_mul, Sprinting and 0 or 1)
 	mul2 = int(FT*15, mul2, (Aiming and Hip) and 0 or 1)
-	
+
 	if !Airborne then
 		self.BobPos[1] = int(FT*7, self.BobPos[1], math.sin(curStep/2)*vel_norm*mul)
 		self.BobPos[2] = int(FT*7, self.BobPos[2], math.cos(curStep)*vel_norm*mul)
@@ -178,16 +178,16 @@ function SWEP:CalcVMMatrix()
 	self.IdlePos[2] = math.cos(CT*2)*idle_mul
 	self.IdleAng[1] = math.sin(45+CT)*idle_mul
 	self.IdleAng[2] = math.cos(45+CT*2)*idle_mul
-	
+
 	AirTime = Airborne and math.Clamp(-speed[3]/75, 0, 25) or int(FT*15, AirTime, 0)
 	GroundHit = !Airborne and int(FT*9, GroundHit, AirTime*1.5) or int(FT*15, GroundHit, 0)
 	FallVel = int(FT*16, FallVel, Airborne and math.Clamp(speed[3]/250, -2, 2) or 0)
 	FallVel2 = int(FT*35, FallVel2, Airborne and math.Clamp(speed[3]/250, -2, 2) or 0)
-	
+
 	local vm_origin = SecondAmendment.CVar["vm_origin"]:GetBool()
 	local vec_origin = vm_origin and self.VMData.Matrix.Origin.Pos or vector_origin
 	local vec_angle = vm_origin and self.VMData.Matrix.Origin.Ang or vector_origin
-	
+
 	AimMul = math.Approach(AimMul, (Hip and Aiming and !Reloading) and 1 or 0, 10*FT)
 	SmoothAimMul = int(FT*25, SmoothAimMul, AimMul)
 
@@ -198,10 +198,10 @@ function SWEP:CalcVMMatrix()
 		AimPos = int(FT*15, AimPos, vec_origin)
 		AimAng = int(FT*15, AimAng, vec_origin)
 	end]]
-	
+
 	AimPos = vec_origin + (self.VMData.Matrix.Aim.Pos - vec_origin) * SmoothAimMul
 	AimAng = vec_angle + (self.VMData.Matrix.Aim.Ang - vec_angle) * SmoothAimMul
-		
+
 
 	sideVel = int(FT*5, sideVel, math.Clamp(speed:DotProduct(meta.angles:Right())/50, -5, 5))
 	newVel = int(FT*10, newVel, vel*mul2)
@@ -209,21 +209,21 @@ function SWEP:CalcVMMatrix()
 
 	angTab.p = EA.p
 	angTab.y = EA.y
-	
+
 	delta = util_NormalizeAngles(angTab - oldDelta)*mul
-	
+
 	oldDelta.p = EA.p
 	oldDelta.y = EA.y
-	
+
 	angDelta2 = int(FT*12, angDelta2, angDelta)
-	
+
 	angDif.p = (angDelta.p - angDelta2.p)
 	angDif.y = (angDelta.y - angDelta2.y)
-	
+
 	angDelta = int(FT*13, angDelta, delta + angDif)
 
 	self.AngDelta = util_NormalizeAngles(angDelta)
-	
+
 	meta.angles:RotateAroundAxis(meta.angles:Right(), AimAng.x + angDelta.p - self.IdleAng.y/3 + GroundHit*mul*3 - FallVel*mul*3 + self.BobPos2.y*run_mul + self.CustomRecoil[2].x)
 	meta.angles:RotateAroundAxis(meta.angles:Up(), AimAng.y + self.IdleAng.x/3 - self.BobPos2.x*run_mul + self.CustomRecoil[2].y)
 	meta.angles:RotateAroundAxis(meta.angles:Forward(), AimAng.z + sideVel + angDelta2.y/2 + self.BobPos.x*run_mul + self.CustomRecoil[2].z)
@@ -235,7 +235,7 @@ function SWEP:CalcVMMatrix()
 	meta.origin = meta.origin + (AimPos[1] + sideVel/3*mul2 + newVel/3 + angDelta[2]/6 - crouchPos + self.IdlePos[1]/12 + self.BobPos[1]/3*run_mul + self.CustomRecoil[1][1]) * right
 	meta.origin = meta.origin + (AimPos[2] + EA.P/60*mul2 - crouchPos + FallVel*mul + self.CustomRecoil[1][2]) * forward
 	meta.origin = meta.origin + (AimPos[3] - newVel - angDelta[1]/6 - (EA.P/90*mul2) + self.IdlePos[2]/12 - self.BobPos[2]/2*run_mul + self.CustomRecoil[1][3]) * up
-	
+
 	meta.angles.p = math.Clamp(meta.angles.p, -89, 89)
 	meta.origin[3] = meta.origin[3] + FallVel*mul*1.25 - GroundHit*mul
 	vm:SetPos(meta.origin)
@@ -305,7 +305,7 @@ function SWEP:CalcView(ply, origin, angles, fov)
 		muzzle.r = -muzzle.p
 
 		local fps = math.Clamp((1/FT)/150, 0, 1)
-		
+
 		muzzle2 = util_NormalizeAngles(LastMuzzle-muzzle)*fps
 
 		LastMuzzle = muzzle
@@ -353,7 +353,7 @@ function SWEP:DrawDot(vm)
 end
 
 local function emitShell()
-			
+
 	ply = LocalPlayer()
 	wep = ply:GetActiveWeapon()
 	if IsValid(wep) and wep.EmitShell then
@@ -366,7 +366,7 @@ usermessage.Hook("CMB_EMITSHELL", emitShell)
 local function PlayAnim(um)
 	seq = um:ReadString()
 	speed = um:ReadFloat()
-	cycle = um:ReadFloat()	
+	cycle = um:ReadFloat()
 
 	ply = LocalPlayer()
 	wep = ply:GetActiveWeapon()
@@ -391,7 +391,7 @@ function SWEP:EmitShell()
 		pos = pos + (0) * ang:Up()
 		pos = pos + (0) * ang:Forward()
 
-		local shell = ClientsideModel(self.VMData.Shell.Model, RENDERGROUP_VIEWMODEL) 
+		local shell = ClientsideModel(self.VMData.Shell.Model, RENDERGROUP_VIEWMODEL)
 		shell:SetPos(pos)
 		shell:PhysicsInitBox(Vector(-0.5, -0.15, -0.5), Vector(0.5, 0.15, 0.5))
 		shell:SetAngles(ang)
@@ -399,8 +399,8 @@ function SWEP:EmitShell()
 		shell:SetSolid(SOLID_VPHYSICS)
 		shell:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
 		shell:SetNoDraw(false)
-		
-			
+
+
 		local phys = shell:GetPhysicsObject()
 		phys:SetMaterial("gmod_silent")
 		phys:SetMass(5)

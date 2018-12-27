@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "viper/ar2/V_IRifle_core"
+	"$surfaceprop" "metal"
+	"$selfillum" 1
+}

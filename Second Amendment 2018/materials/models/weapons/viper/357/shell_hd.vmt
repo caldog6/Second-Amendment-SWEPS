@@ -1,9 +1,0 @@
-"VertexLitGeneric"
-{
-	"$baseTexture" "models\weapons\viper\357\shell_hd"
-	"$envmap" "env_cubemap"	
-//	"$envmapcontrast" 1
-	"$basealphaenvmapmask" 1	
-	"$envmaptint" "[ .6 .5 .3]"
-	"$model" 1
-}

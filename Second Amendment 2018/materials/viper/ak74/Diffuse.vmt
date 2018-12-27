@@ -1,0 +1,20 @@
+Vertexlitgeneric
+{
+
+	"$basetexture" "viper\ak74\AKS74_diffuse"
+	"$bumpmap"     "viper\ak74\AKS74_normal"
+	"$nocull" "1"
+
+	$phong                      1
+	$phongboost                 10
+	$phongfresnelranges         "[5 10 10]"
+	"$phongexponenttexture" 	"viper\ak74\AKS74_exponent"
+	$phongalbedotint            1
+	$phongalbedoboost           48
+
+	$envmap                     env_cubemap
+	$envmaptint                 "[.035 .035 .055]"
+	$basetexturealphaenvmapmask   1
+
+
+}

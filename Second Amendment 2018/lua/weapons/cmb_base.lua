@@ -76,7 +76,7 @@ SWEP.VMData = {
 		["FullHipReload"] = "hip_reload_full",
 		["Hip"] = "origin_to_hip",
 		["Origin"] = "hip_to_origin",
-		["Sprint"] = nil,
+		["Sprint"] = "sprint",
 		["Nade"] = "grenade",
 		["HipNade"] = "hip_grenade"
 	},
@@ -86,7 +86,8 @@ SWEP.VMData = {
 		["Draw"] = "",
 		["Reload"] = {},
 		["FullReload"] = {},
-		["Aim"] = {}
+		["Aim"] = {},
+		["Sprint"] = {}
 	},
 
 	["Matrix"] = {
@@ -104,7 +105,7 @@ SWEP.VMData = {
 		},
 		["World"] = {
 			["Pos"] = Vector(0,0,0),
-			["Ang"] = Vector(0,0,0)		
+			["Ang"] = Vector(0,0,0)
 		}
 	},
 
@@ -139,8 +140,8 @@ SWEP.DotSight 		= false
 SWEP.WallDistance	= 50
 
 SWEP.UseParticleMuzzle = false // set this to true if you want to disable the default muzzle effect and use particles as muzzle instead
-SWEP.ParticleMuzzle = {"particle1", "particle2", "particle3"} // table of particles, or can be a single string
-SWEP.ParticleMuzzleToStop = "particle3" // same thing, either a table or a single string, these particles get stopped when firing the next shot (best used on muzzle smoke to prevent unrealistic ammounts of it)
+SWEP.ParticleMuzzle = {} // table of particles, or can be a single string
+SWEP.ParticleMuzzleToStop = "" // same thing, either a table or a single string, these particles get stopped when firing the next shot (best used on muzzle smoke to prevent unrealistic ammounts of it)
 
 function SWEP:SetNextFire(time) self:SetNextPrimaryFire(CurTime() + time) end
 function SWEP:GetNextFire() return self:GetNextPrimaryFire() end
@@ -165,7 +166,7 @@ function SWEP:SetupDataTables()
 	self:NetworkVar("Bool", 5, "Pump")
 	self:NetworkVar("Bool", 6, "Pin")
 	self:NetworkVar("Bool", 7, "Throw")
-	
+
 	self:NetworkVar("Float", 0, "ActTime")
 end
 
@@ -199,7 +200,7 @@ function SWEP:StartReload()
 			self:PlayAnimation("StartReload")
 			self:PlaySoundSequence("StartReload")
 		end
-		
+
 	end
 
 	self.StartReloadClip = self:Clip1()
@@ -277,7 +278,7 @@ function SWEP:MagReload()
 				self:PlayAnimation("HipReload")
 			else
 				self:PlayAnimation("Reload")
-			end			
+			end
 		end
 	end
 
@@ -325,7 +326,7 @@ function SWEP:HandleSoundSequence()
 				if v.callback then
 					v.callback(self)
 				end
-				
+
 				v.played = true
 			end
 		end
@@ -336,7 +337,7 @@ function SWEP:Holster()
 	self:SetReloading(false)
 	self:SetAiming(false)
 	self:SetSprinting(false)
-	
+
 	self:StopSoundSequence()
 	return true
 end
@@ -411,7 +412,7 @@ function SWEP:Think()
 
 	if self:GetHip() != LastHip then
 		LastHip = self:GetHip()
-		
+
 		self:Foley()
 	end
 
@@ -456,6 +457,7 @@ function SWEP:Think()
 		if (SP and SERVER or CLIENT) and IsFirstTimePredicted() and !self:GetReloading() then
 			if self:GetSprinting() then
 				self:PlayAnimation("Sprint")
+				self:PlaySoundSequence("Sprint")
 			else
 				self:PlayAnimation("Origin", 0, 1)
 			end
@@ -491,10 +493,10 @@ end
 
 function util_Clamp(a)
 	local s = a * 1
-	
+
 	a.x = math.Clamp(a.x, -5, 5)
 	a.y = math.Clamp(a.y, -5, 5)
-	
+
 	return s - a
 end
 
@@ -527,9 +529,9 @@ function SWEP:PrimaryAttack()
 			if !self.PumpAction then
 				self:EmitShell()
 			end
-			
+
 			self:StopParticleMuzzle()
-			
+
 			if self.UseParticleMuzzle then
 				self:PerformParticleMuzzle()
 			else
@@ -540,7 +542,7 @@ function SWEP:PrimaryAttack()
 			end
 		end
 	end
-	
+
 	self:ShootBullet()
 
 	self:Recoil()
@@ -579,7 +581,7 @@ function SWEP:CalcRecoil()
 	return BaseRecoil * CrouchRecoil
 end
 
-function SWEP:SecondaryAttack() 
+function SWEP:SecondaryAttack()
 	return
 end
 
@@ -611,26 +613,26 @@ function SWEP:PerformParticleMuzzle()
 		SendUserMessage("CMB_PARTICLE_MUZZLE_EFFECTS_UMSG", self.Owner)
 		return
 	end
-	
+
 	self:_performParticleMuzzle()
 end
 
 function SWEP:_performParticleMuzzle()
 	if SERVER then return end
-	
+
 	if self.Owner:ShouldDrawLocalPlayer() then
 		return
 	end
-	
+
 	local vm = self.vm
 	if !IsValid(vm) then return end
-	
+
 	local muz = vm:GetAttachment(1)
 	if !muz then return end
-	
+
 	local muzTab = self.ParticleMuzzle
 	if !muzTab then return end
-	
+
 	// either list of particles, or just a single particle
 	if type(muzTab) == "table" then
 		for _, particle in pairs(muzTab) do
@@ -641,7 +643,7 @@ function SWEP:_performParticleMuzzle()
 	elseif type(muzTab) == "string" then
 		ParticleEffectAttach(muzTab, PATTACH_POINT_FOLLOW, vm, 1)
 	end
-	
+
 	local dlight = DynamicLight(self:EntIndex())
 	dlight.r = 250
 	dlight.g = 250
@@ -664,13 +666,13 @@ end
 
 function SWEP:_stopParticleMuzzle()
 	if SERVER then return end
-	
+
 	local muzTab = self.ParticleMuzzleToStop
 	if !muzTab then return end
-	
+
 	local vm = self.vm
 	if !IsValid(vm) then return end
-	
+
 	if type(muzTab) == "table" then
 		for _, particle in pairs(muzTab) do
 			if type(particle) == "string" then
@@ -686,27 +688,27 @@ if CLIENT then
 	local function CMB_PARTICLE_MUZZLE_EFFECTS()
 		local ply = LocalPlayer()
 		if !IsValid(ply) then return end
-		
+
 		local wep = ply:GetActiveWeapon()
-		
+
 		if not IsValid(wep) or not wep.SecondAmendment then
 			return
 		end
-		
+
 		wep:_performParticleMuzzle()
 	end
 	usermessage.Hook("CMB_PARTICLE_MUZZLE_EFFECTS_UMSG", CMB_PARTICLE_MUZZLE_EFFECTS)
-	
+
 	local function CMB_STOPVMPARTICLES()
 		local ply = LocalPlayer()
 		if !IsValid(ply) then return end
-		
+
 		local wep = ply:GetActiveWeapon()
-		
+
 		if not IsValid(wep) or not wep.SecondAmendment then
 			return
 		end
-		
+
 		wep:_stopParticleMuzzle()
 	end
 	usermessage.Hook("CMB_STOPVMPARTICLES_UMSG", CMB_STOPVMPARTICLES)

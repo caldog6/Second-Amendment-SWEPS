@@ -1,9 +1,9 @@
-SWEP.PrintName			= ".357 Magnum"	
+SWEP.PrintName			= ".357 Magnum"
 SWEP.Slot				= 1
 SWEP.SlotPos			= 1
 
 SWEP.Base				= "cmb_base"
-SWEP.Category			= "Second Amendment"
+SWEP.Category			= "Second Amendment HL2"
 
 SWEP.Spawnable			= true
 
@@ -17,56 +17,52 @@ SWEP.Primary.Force 		= 1
 SWEP.Primary.MagSize		= 6
 SWEP.Primary.DefaultClip	= 0
 SWEP.Primary.Automatic		= false
-SWEP.Primary.Ammo			= "cmb_44"
+SWEP.Primary.Ammo			= "357"
 
-SWEP.ReloadLength 		= 3.5
-SWEP.FullReloadLength	= 3.5
+SWEP.ReloadLength 		= 4.25
+SWEP.FullReloadLength	= 4.25
 
 SWEP.VMData = {
-	["Model"] = "models/viper/v_cmb_357.mdl",
+	["Model"] = "models/viper/viper_357.mdl",
 
 	["Anim"] = {
 		["Draw"] = "draw",
-		["Fire"] = "hip_shoot",
-		["Reload"] = "hip_reload",
-		["HipReload"] = "hip_reload",
-		["FullReload"] = "hip_reload",
-		["FullHipReload"] = "hip_reload",
-		["Hip"] = "origin_to_hip",
-		["Origin"] = "hip_to_origin",
+		["Fire"] = "fire_is",
+		["Reload"] = "reload",
+		["HipReload"] = "reload",
+		["FullReload"] = "reload",
+		["FullHipReload"] = "reload",
+		["Hip"] = "lowtoidle",
+		["Origin"] = "idletolow",
 		["Sprint"] = "sprint",
 		["Nade"] = "grenade",
 		["HipNade"] = "hip_grenade"
 	},
 
 	["Activity"] = {
-		["Fire"] = "CMB_Taurus.Fire",
-		["Draw"] = "CMB_Uni.Deploy1",
+		["Fire"] = "CMB_357.Fire",
+		["Draw"] = "CMB_357.Draw",
 		["Reload"] = {
-			{time = 0.3, snd = "CMB_Taurus.Open"},
-			{time = 0.55, snd = "CMB_Taurus.Out"},
-			{time = 0.7, snd = "CMB_AKM.ClipOutRattle"},
-			{time = 1.9, snd = "CMB_Taurus.In"},
-			{time = 2.8, snd = "CMB_Taurus.Close"},
-			{time = 3.4, snd = "CMB_Uni.Tap"}
+			{time = 0.25, snd = "CMB_357.Reload1"},
+			{time = 1.25, snd = "CMB_357.Reload2"},
+			{time = 2.8, snd = "CMB_357.Reload3"},
+			{time = 3.45, snd = "CMB_357.Reload4"}
+		},
+		["Sprint"] = {
+			{time = 0, snd = "CMB_HL2.Sprint"}
 		},
 		["FullReload"] = {
-			{time = 0.3, snd = "CMB_Taurus.Open"},
-			{time = 0.55, snd = "CMB_Taurus.Out"},
-			{time = 0.7, snd = "CMB_AKM.ClipOutRattle"},
-			{time = 1.9, snd = "CMB_Taurus.In"},
-			{time = 2.8, snd = "CMB_Taurus.Close"},
-			{time = 3.4, snd = "CMB_Uni.Tap"}
-		},
-		["Aim"] = {
-			{time = 0.15, snd = "CMB_Uni.Tap"}
+			{time = 0.25, snd = "CMB_357.Reload1"},
+			{time = 1.25, snd = "CMB_357.Reload2"},
+			{time = 2.8, snd = "CMB_357.Reload3"},
+			{time = 3.45, snd = "CMB_357.Reload4"}
 		}
 	},
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-2.75,-3,0.65),
-			["Ang"] = Vector(0.4,-0.65,0)
+			["Pos"] = Vector(-3.155,-3,1),
+			["Ang"] = Vector(0,0,0)
 		},
 		["Sprint"] = {
 			["Pos"] = Vector(0,0,0),
@@ -78,11 +74,11 @@ SWEP.VMData = {
 		},
 		["World"] = {
 			["Pos"] = Vector(-4,12,-7),
-			["Ang"] = Vector(-40,2,0)		
+			["Ang"] = Vector(-40,2,0)
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0,1,0.1),
-			["Ang"] = Vector(-1.6,0,0)	
+			["Ang"] = Vector(-1.6,0,0)
 		}
 	},
 
@@ -97,7 +93,7 @@ SWEP.HoldTypes = {
 }
 
 SWEP.ViewModel = SWEP.VMData.Model
-SWEP.WorldModel = "models/weapons/danny/cmb/w_cmb_browning.mdl"
+SWEP.WorldModel = "models/weapons/w_357.mdl"
 
 SWEP.HipRecoil		= 5
 SWEP.AimRecoil		= 4
