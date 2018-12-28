@@ -84,7 +84,7 @@ SWEP.VMData = {
 }
 
 SWEP.ViewModel = SWEP.VMData.Model
-SWEP.WorldModel = "models/weapons/w_ar2.mdl"
+SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 
 SWEP.HipRecoil		= 1.6
 SWEP.AimRecoil		= 1.3

@@ -72,7 +72,7 @@ SWEP.VMData = {
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-5,-3,2),
+			["Pos"] = Vector(-5,-3,2.4),
 			["Ang"] = Vector(0,0,0)
 		},
 		["Sprint"] = {
@@ -95,7 +95,7 @@ SWEP.VMData = {
 }
 
 SWEP.ViewModel = SWEP.VMData.Model
-SWEP.WorldModel = "models/weapons/w_smg1.mdl"
+SWEP.WorldModel = "models/weapons/w_pistol.mdl"
 
 SWEP.HipRecoil		= 1.6
 SWEP.AimRecoil		= 1.3
