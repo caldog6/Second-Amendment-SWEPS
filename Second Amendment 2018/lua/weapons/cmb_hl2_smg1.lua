@@ -60,7 +60,7 @@ SWEP.VMData = {
 
 	["Matrix"] = {
 		["Aim"] = {
-			["Pos"] = Vector(-4.67,-5,1.5),
+			["Pos"] = Vector(-4.63,-5,1.5),
 			["Ang"] = Vector(1.45,0.2,0)
 		},
 		["Sprint"] = {
@@ -80,6 +80,11 @@ SWEP.VMData = {
 	["Shell"] = {
 		["Model"] = "models/shells/shell_9mm.mdl"
 	}
+}
+
+SWEP.HoldTypes = {
+	["Aiming"] = "smg",
+	["Hip"] = "passive",
 }
 
 SWEP.ViewModel = SWEP.VMData.Model

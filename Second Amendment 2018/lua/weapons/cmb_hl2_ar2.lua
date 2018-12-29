@@ -69,7 +69,7 @@ SWEP.VMData = {
 			["Ang"] = Vector(0,0,0)
 		},
 		["Origin"] = {
-			["Pos"] = Vector(1,1.5,-0.6),
+			["Pos"] = Vector(-2,-1.5,-0.6),
 			["Ang"] = Vector(0,0,0)
 		},
 		["Recoil"] = {

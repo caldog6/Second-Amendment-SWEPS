@@ -94,6 +94,11 @@ SWEP.VMData = {
 	}
 }
 
+SWEP.HoldTypes = {
+	["Aiming"] = "revolver",
+	["Hip"] = "normal",
+}
+
 SWEP.ViewModel = SWEP.VMData.Model
 SWEP.WorldModel = "models/weapons/w_pistol.mdl"
 
