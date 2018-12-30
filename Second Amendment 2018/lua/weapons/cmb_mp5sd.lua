@@ -1,4 +1,4 @@
-SWEP.PrintName			= "MP5-SD"	
+SWEP.PrintName			= "MP5-SD"
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
@@ -75,8 +75,8 @@ SWEP.VMData = {
 			["Ang"] = Vector(0,0,0)
 		},
 		["Recoil"] = {
-			["Pos"] = Vector(0,0.6,0.2),
-			["Ang"] = Vector(-1,0,0)	
+			["Pos"] = Vector(0,0.25,0),
+			["Ang"] = Vector(0,0,0)
 		}
 	},
 

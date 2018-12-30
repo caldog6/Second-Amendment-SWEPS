@@ -1,4 +1,4 @@
-SWEP.PrintName			= "RU-556"	
+SWEP.PrintName			= "RU-556"
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
@@ -70,8 +70,8 @@ SWEP.VMData = {
 			["Ang"] = Vector(0,0,0)
 		},
 		["Recoil"] = {
-			["Pos"] = Vector(0,0.6,0),
-			["Ang"] = Vector(-0.1,0,0)	
+			["Pos"] = Vector(0,1,0),
+			["Ang"] = Vector(0,0,0)
 		}
 	},
 

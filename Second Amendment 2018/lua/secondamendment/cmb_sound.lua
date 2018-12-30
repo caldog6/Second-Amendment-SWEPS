@@ -11,6 +11,12 @@ SecondAmendment.AddSound("M4", "ClipIn", "weapons/cmb/m4/magin.wav")
 SecondAmendment.AddSound("M4", "BoltBack", "weapons/cmb/m4/boltback.wav")
 SecondAmendment.AddSound("M4", "BoltForward", "weapons/cmb/m4/boltrelease.wav")
 
+SecondAmendment.AddSound("M16A4", "Fire", "weapons/viper/m16a4/fire1.wav", "weapons/cmb/m4/fire2.wav", "weapons/cmb/m4/fire3.wav" )
+SecondAmendment.AddSound("M16A4", "ClipOut", "weapons/viper/m16a4/magout.wav")
+SecondAmendment.AddSound("M16A4", "ClipIn", "weapons/viper/m16a4/magin.wav")
+SecondAmendment.AddSound("M16A4", "BoltBack", "weapons/viper/m16a4/boltback.wav")
+SecondAmendment.AddSound("M16A4", "BoltForward", "weapons/viper/m16a4/boltrelease.wav")
+
 SecondAmendment.AddSound("AKM", "Fire", "weapons/cmb/akm/fire.wav")
 SecondAmendment.AddSound("AKM", "ClipOut", "weapons/cmb/akm/magout.wav")
 SecondAmendment.AddSound("AKM", "ClipRelease", "weapons/cmb/akm/magrelease.wav")
@@ -100,6 +106,10 @@ SecondAmendment.AddSound("Taurus", "Close", "weapons/cmb/taurus/close.wav")
 
 SecondAmendment.AddSound("M67", "Throw", "weapons/cmb/m67/m67_throw.wav")
 SecondAmendment.AddSound("M67", "PullPin", "weapons/cmb/m67/m67_pullpin.wav")
+
+SecondAmendment.AddSound("Grenade", "Throw", "weapons/viper/grenade/throw.wav")
+SecondAmendment.AddSound("Grenade", "Draw", "weapons/viper/grenade/grenade_draw.wav")
+SecondAmendment.AddSound("Grenade", "PullPin", "weapons/viper/grenade/pull.wav")
 
 SecondAmendment.AddSound("Uni", "Foley1", "weapons/cmb/uni/foley1.wav", 0.5)
 SecondAmendment.AddSound("Uni", "Foley2", "weapons/cmb/uni/foley2.wav", 0.5)
