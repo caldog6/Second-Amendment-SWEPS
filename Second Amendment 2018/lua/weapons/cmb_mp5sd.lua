@@ -53,7 +53,20 @@ SWEP.VMData = {
 			{time = 1.7, snd = "CMB_MP5SD.ClipIn"},
 			{time = 2.45, snd = "CMB_AKM.Rattle"}
 		},
+		["HipReload"] = {
+			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
+			{time = 0.3, snd = "CMB_MP5SD.ClipOut"},
+			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.7, snd = "CMB_MP5SD.ClipIn"},
+			{time = 2.45, snd = "CMB_AKM.Rattle"}
+		},
 		["FullReload"] = {
+			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
+			{time = 0.3, snd = "CMB_MP5SD.ClipOut"},
+			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.7, snd = "CMB_MP5SD.ClipIn"}
+		},
+		["FullHipReload"] = {
 			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
 			{time = 0.3, snd = "CMB_MP5SD.ClipOut"},
 			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},

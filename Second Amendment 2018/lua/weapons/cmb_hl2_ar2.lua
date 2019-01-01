@@ -57,6 +57,14 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_AR2.Magout"},
 			{time = 1.45, snd = "CMB_AR2.Magin"}
 		},
+		["FullHipReload"] = {
+			{time = 0.3, snd = "CMB_AR2.Magout"},
+			{time = 1.45, snd = "CMB_AR2.Magin"}
+		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_AR2.Magout"},
+			{time = 1.45, snd = "CMB_AR2.Magin"}
+		},
 	},
 
 	["Matrix"] = {

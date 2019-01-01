@@ -1,4 +1,4 @@
-SWEP.PrintName			= "IMI UZI"	
+SWEP.PrintName			= "IMI UZI"
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
@@ -49,7 +49,19 @@ SWEP.VMData = {
 			{time = 1, snd = "CMB_UZI.ClipIn"},
 			{time = 1.3, snd = "CMB_UZI.Tap"}
 		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_UZI.ClipOut"},
+			{time = 1, snd = "CMB_UZI.ClipIn"},
+			{time = 1.3, snd = "CMB_UZI.Tap"}
+		},
 		["FullReload"] = {
+			{time = 0.3, snd = "CMB_UZI.ClipOut"},
+			{time = 1, snd = "CMB_UZI.ClipIn"},
+			{time = 1.3, snd = "CMB_UZI.Tap"},
+			{time = 2, snd = "CMB_UZI.BoltBack"},
+			{time = 2.15, snd = "CMB_UZI.BoltForward"}
+		},
+		["FullHipReload"] = {
 			{time = 0.3, snd = "CMB_UZI.ClipOut"},
 			{time = 1, snd = "CMB_UZI.ClipIn"},
 			{time = 1.3, snd = "CMB_UZI.Tap"},
@@ -76,7 +88,7 @@ SWEP.VMData = {
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0, 1, -0.1),
-			["Ang"] = Vector(-0.5, 0, 0)	
+			["Ang"] = Vector(-0.5, 0, 0)
 		}
 	},
 

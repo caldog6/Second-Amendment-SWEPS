@@ -48,7 +48,17 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_M16A4.ClipOut"},
 			{time = 1.5, snd = "CMB_M16A4.ClipIn"},
 		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_M16A4.ClipOut"},
+			{time = 1.5, snd = "CMB_M16A4.ClipIn"},
+		},
 		["FullReload"] = {
+			{time = 0.3, snd = "CMB_M16A4.ClipOut"},
+			{time = 1.5, snd = "CMB_M16A4.ClipIn"},
+			{time = 1.95, snd = "CMB_M4.BoltBack"},
+			{time = 2.2, snd = "CMB_M4.BoltForward"}
+		},
+		["FullHipReload"] = {
 			{time = 0.3, snd = "CMB_M16A4.ClipOut"},
 			{time = 1.5, snd = "CMB_M16A4.ClipIn"},
 			{time = 1.95, snd = "CMB_M4.BoltBack"},

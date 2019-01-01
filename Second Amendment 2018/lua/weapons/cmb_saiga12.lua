@@ -1,4 +1,4 @@
-SWEP.PrintName			= "Saiga-12k"	
+SWEP.PrintName			= "Saiga-12k"
 SWEP.Slot				= 3
 SWEP.SlotPos			= 1
 
@@ -51,7 +51,23 @@ SWEP.VMData = {
 			{time = 1.7, snd = "CMB_AKM.ClipIn"},
 			{time = 2.45, snd = "CMB_AKM.Rattle"}
 		},
+		["HipReload"] = {
+			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
+			{time = 0.3, snd = "CMB_AKM.ClipOut"},
+			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.7, snd = "CMB_AKM.ClipIn"},
+			{time = 2.45, snd = "CMB_AKM.Rattle"}
+		},
 		["FullReload"] = {
+			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
+			{time = 0.3, snd = "CMB_AKM.ClipOut"},
+			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.7, snd = "CMB_AKM.ClipIn"},
+			{time = 2.65, snd = "CMB_AKM.BoltBack"},
+			{time = 2.85, snd = "CMB_AKM.BoltForward"},
+			{time = 3.6, snd = "CMB_AKM.Rattle"}
+		},
+		["FullHipReload"] = {
 			{time = 0.29, snd = "CMB_AKM.ClipRelease"},
 			{time = 0.3, snd = "CMB_AKM.ClipOut"},
 			{time = 0.4, snd = "CMB_AKM.ClipOutRattle"},
@@ -77,7 +93,7 @@ SWEP.VMData = {
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0,0.6,0.2),
-			["Ang"] = Vector(-1,0,0)	
+			["Ang"] = Vector(-1,0,0)
 		}
 	},
 

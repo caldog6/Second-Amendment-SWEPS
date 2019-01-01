@@ -43,17 +43,17 @@ function bullet:penetrate(attacker, tr, dmginfo)
 
 	local density = Density[tr.MatType] or 3
 	penPos = tr.Normal * (maxPenetration*(density*2))
-		
+
 	local trace 	= {}
 	trace.endpos 	= tr.HitPos
 	trace.start 	= tr.HitPos + penPos
 	trace.mask 		= MASK_SHOT
 	trace.filter 	= {}
-	   
+
 	trace 	= util.TraceLine(trace)
 
 	if (trace.StartSolid or trace.Fraction >= 1.0 or tr.Fraction <= 0.0) then return end
-	
+
 	local penDamage = (density/4)
 
 	self.Num 		= 1
@@ -66,19 +66,19 @@ function bullet:penetrate(attacker, tr, dmginfo)
 	self.Damage		= (dmginfo:GetDamage() * penDamage)
 	self.Callback   = function(a, b, c) self:penetrate(a, b, c) end
 
-	local bul2 = {	
+	local bul2 = {
 		Num 		= 1,
 		Src 		= trace.HitPos + tr.Normal,
-		Dir 		= -tr.Normal,	
+		Dir 		= -tr.Normal,
 		Spread 	= Vector(0, 0, 0),
 		Tracer	= 0,
 		Force		= 0,
 		Damage	= 0
 	}
-	
-	
+
+
 	if IsFirstTimePredicted() then
-		timer.Simple(0.001, function() 
+		timer.Simple(0.001, function()
 			attacker.FireBullets(attacker, self, true)
 			attacker.FireBullets(attacker, bul2, true)
 		end)

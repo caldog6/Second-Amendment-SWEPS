@@ -1,4 +1,4 @@
-SWEP.PrintName			= "Remington 700"	
+SWEP.PrintName			= "Remington 700"
 SWEP.Slot				= 3
 SWEP.SlotPos			= 1
 
@@ -51,7 +51,23 @@ SWEP.VMData = {
 			{time = 3, snd = "CMB_Remington.BoltForward"},
 			{time = 3.2, snd = "CMB_Remington.BoltLatch"}
 		},
+		["HipReload"] = {
+			{time = 0.25, snd = "CMB_Remington.BoltRelease"},
+			{time = 0.4, snd = "CMB_Remington.BoltBack"},
+			{time = 1.2, snd = "CMB_Remington.MagOut"},
+			{time = 2.25, snd = "CMB_Remington.MagIn"},
+			{time = 3, snd = "CMB_Remington.BoltForward"},
+			{time = 3.2, snd = "CMB_Remington.BoltLatch"}
+		},
 		["FullReload"] = {
+			{time = 0.25, snd = "CMB_Remington.BoltRelease"},
+			{time = 0.4, snd = "CMB_Remington.BoltBack"},
+			{time = 1.2, snd = "CMB_Remington.MagOut"},
+			{time = 2.25, snd = "CMB_Remington.MagIn"},
+			{time = 3, snd = "CMB_Remington.BoltForward"},
+			{time = 3.2, snd = "CMB_Remington.BoltLatch"}
+		},
+		["FullHipReload"] = {
 			{time = 0.25, snd = "CMB_Remington.BoltRelease"},
 			{time = 0.4, snd = "CMB_Remington.BoltBack"},
 			{time = 1.2, snd = "CMB_Remington.MagOut"},
@@ -82,7 +98,7 @@ SWEP.VMData = {
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(-0.2,0.4,-0.05),
-			["Ang"] = Vector(-0.5,0,-1)	
+			["Ang"] = Vector(-0.5,0,-1)
 		}
 	},
 
@@ -135,14 +151,14 @@ if CLIENT then
 	}
 	SWEP.ScopeAlpha = 0
 	SWEP.ScopePos = 0
-	
+
 	local aim_difference = Vector()
 	function SWEP:DrawRT()
 		local x, y = ScrW(), ScrH()
 		local old = render.GetRenderTarget()
 
 		self.ScopeAlpha = math.Approach(self.ScopeAlpha, (!self:GetHip() or self:GetReloading() or !self:GetAiming()) and 255 or 0, 15)
-		
+
 		local att = self.vm:GetAttachment(1)
 		local vm_pos, vm_ang = att.Pos, att.Ang
 
@@ -180,7 +196,7 @@ if CLIENT then
 			surface.DrawRect(angDif.y - 2048, angDif.p + 1024, 4096, 4096) --down
 			surface.DrawRect(angDif.y + 1024, angDif.p, 4096, 4096) --right
 
-			surface.SetDrawColor(255*lens_color[1], 255*lens_color[2], 255*lens_color[3], 255)			
+			surface.SetDrawColor(255*lens_color[1], 255*lens_color[2], 255*lens_color[3], 255)
 			surface.SetTexture(self.Lens)
 			surface.DrawTexturedRect(0, 0, 1024, 1024)
 		cam.End2D()

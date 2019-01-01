@@ -51,7 +51,23 @@ SWEP.VMData = {
 			{time = 3, snd = "CMB_L96.BoltForward"},
 			{time = 3.2, snd = "CMB_L96.BoltLatch"}
 		},
+		["HipReload"] = {
+			{time = 0.25, snd = "CMB_L96.BoltRelease"},
+			{time = 0.4, snd = "CMB_L96.BoltBack"},
+			{time = 1.2, snd = "CMB_L96.MagOut"},
+			{time = 2.25, snd = "CMB_L96.MagIn"},
+			{time = 3, snd = "CMB_L96.BoltForward"},
+			{time = 3.2, snd = "CMB_L96.BoltLatch"}
+		},
 		["FullReload"] = {
+			{time = 0.25, snd = "CMB_L96.BoltRelease"},
+			{time = 0.4, snd = "CMB_L96.BoltBack"},
+			{time = 1.2, snd = "CMB_L96.MagOut"},
+			{time = 2.25, snd = "CMB_L96.MagIn"},
+			{time = 3, snd = "CMB_L96.BoltForward"},
+			{time = 3.2, snd = "CMB_L96.BoltLatch"}
+		},
+		["FullHipReload"] = {
 			{time = 0.25, snd = "CMB_L96.BoltRelease"},
 			{time = 0.4, snd = "CMB_L96.BoltBack"},
 			{time = 1.2, snd = "CMB_L96.MagOut"},

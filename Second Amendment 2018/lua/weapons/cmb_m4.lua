@@ -1,4 +1,4 @@
-SWEP.PrintName			= "Colt M4 Carbine"	
+SWEP.PrintName			= "Colt M4 Carbine"
 SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 
@@ -48,7 +48,17 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_M4.ClipOut"},
 			{time = 1.5, snd = "CMB_M4.ClipIn"},
 		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_M4.ClipOut"},
+			{time = 1.5, snd = "CMB_M4.ClipIn"},
+		},
 		["FullReload"] = {
+			{time = 0.3, snd = "CMB_M4.ClipOut"},
+			{time = 1.5, snd = "CMB_M4.ClipIn"},
+			{time = 1.95, snd = "CMB_M4.BoltBack"},
+			{time = 2.2, snd = "CMB_M4.BoltForward"}
+		},
+		["FullHipReload"] = {
 			{time = 0.3, snd = "CMB_M4.ClipOut"},
 			{time = 1.5, snd = "CMB_M4.ClipIn"},
 			{time = 1.95, snd = "CMB_M4.BoltBack"},
@@ -71,7 +81,7 @@ SWEP.VMData = {
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0,0.6,0),
-			["Ang"] = Vector(-0.1,0,0)	
+			["Ang"] = Vector(-0.1,0,0)
 		}
 	},
 

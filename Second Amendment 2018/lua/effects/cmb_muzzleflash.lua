@@ -1,10 +1,10 @@
 AddCSLuaFile()
 
 function EFFECT:Init(data)
-	
+
 	self.WeaponEnt = data:GetEntity()
 	self.Attachment = data:GetAttachment()
-	
+
 	self.Position = self:GetTracerShootPos2(data:GetOrigin(), self.WeaponEnt, self.Attachment)
 
 	self.Forward = data:GetNormal()
@@ -23,7 +23,7 @@ function EFFECT:Init(data)
 	particle:SetStartSize(5)
 	particle:SetEndSize(6)
 	particle:SetRoll(math.Rand(-180, 180))
-	particle:SetColor(255,255,255)	
+	particle:SetColor(255,255,255)
 
 	local particle = emitter:Add("particle/particle_smokegrenade", self.Position)
 	--particle:SetVelocity(100 * self.Forward + 8 * VectorRand())
@@ -42,8 +42,8 @@ function EFFECT:Init(data)
 	emitter:Finish()
 
 	local dlight = DynamicLight(self:EntIndex())
-		
-	dlight.r = 255 
+
+	dlight.r = 255
 	dlight.g = 120
 	dlight.b = 60
 	dlight.Brightness = 2
@@ -56,33 +56,33 @@ end
 function EFFECT:GetTracerShootPos2(pos, ent, att)
 
 	self.ViewModelTracer = false
-	
+
 	if !IsValid( ent ) then return pos end
 	if !ent:IsWeapon() then return pos end
 
 	-- Shoot from the viewmodel
 	if (ent:IsCarriedByLocalPlayer() && !LocalPlayer():ShouldDrawLocalPlayer()) then
-	
+
 		local ViewModel = ent.vm
-		
+
 		if ViewModel:IsValid() then
-			
+
 			local att = ViewModel:GetAttachment(att)
 			if att then
 				pos = att.Pos
 				self.ViewModelTracer = true
 			end
-			
+
 		end
-	
+
 	-- Shoot from the world model
 	else
-	
+
 		local att = ent:GetAttachment(att)
 		if att then
 			pos = att.Pos
 		end
-	
+
 	end
 
 	return pos

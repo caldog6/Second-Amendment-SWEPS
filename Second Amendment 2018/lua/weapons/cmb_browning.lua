@@ -1,4 +1,4 @@
-SWEP.PrintName			= "Browning Hi-Power"	
+SWEP.PrintName			= "Browning Hi-Power"
 SWEP.Slot				= 1
 SWEP.SlotPos			= 1
 
@@ -34,23 +34,27 @@ SWEP.VMData = {
 	["Model"] = "models/viper/browninghp.mdl",
 
 		["Anim"] = {
-		["Draw"] = "draw",
-		["Fire"] = "hip_shoot",
-		["Reload"] = "reload",
-		["HipReload"] = "hip_reload",
-		["FullReload"] = "reload_full",
-		["FullHipReload"] = "reload_full",
-		["Hip"] = "origin_to_hip",
-		["Origin"] = "hip_to_origin",
-		["Sprint"] = "sprint",
-		["Nade"] = "grenade",
-		["HipNade"] = "hip_grenade"
+			["Draw"] = "draw",
+			["Fire"] = "hip_shoot",
+			["Reload"] = "reload",
+			["HipReload"] = "hip_reload",
+			["FullReload"] = "reload_full",
+			["FullHipReload"] = "hip_reload_full",
+			["Hip"] = "origin_to_hip",
+			["Origin"] = "hip_to_origin",
+			["Sprint"] = "sprint",
+			["Nade"] = "grenade",
+			["HipNade"] = "hip_grenade"
 	},
 
 	["Activity"] = {
 		["Fire"] = "CMB_Browning.Fire",
 		["Draw"] = "CMB_Uni.Deploy1",
 		["Reload"] = {
+			{time = 0.3, snd = "CMB_Browning.MagOut"},
+			{time = 1.1, snd = "CMB_Browning.MagIn"}
+		},
+		["HipReload"] = {
 			{time = 0.3, snd = "CMB_Browning.MagOut"},
 			{time = 1.1, snd = "CMB_Browning.MagIn"}
 		},
@@ -82,11 +86,11 @@ SWEP.VMData = {
 		},
 		["World"] = {
 			["Pos"] = Vector(-4,12,-7),
-			["Ang"] = Vector(-40,2,0)		
+			["Ang"] = Vector(-40,2,0)
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0,2,0.2),
-			["Ang"] = Vector(-2,0,0)	
+			["Ang"] = Vector(-2,0,0)
 		}
 	},
 
@@ -145,7 +149,7 @@ function SWEP:Holster()
 	self:SetReloading(false)
 	self:SetAiming(false)
 	self:SetSprinting(false)
-	
+
 	self:StopSoundSequence()
 
 	self._slide = true

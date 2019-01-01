@@ -1,4 +1,4 @@
-SWEP.PrintName			= "Taurus Raging Bull"	
+SWEP.PrintName			= "Taurus Raging Bull"
 SWEP.Slot				= 1
 SWEP.SlotPos			= 1
 
@@ -50,7 +50,23 @@ SWEP.VMData = {
 			{time = 2.8, snd = "CMB_Taurus.Close"},
 			{time = 3.4, snd = "CMB_Uni.Tap"}
 		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_Taurus.Open"},
+			{time = 0.55, snd = "CMB_Taurus.Out"},
+			{time = 0.7, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.9, snd = "CMB_Taurus.In"},
+			{time = 2.8, snd = "CMB_Taurus.Close"},
+			{time = 3.4, snd = "CMB_Uni.Tap"}
+		},
 		["FullReload"] = {
+			{time = 0.3, snd = "CMB_Taurus.Open"},
+			{time = 0.55, snd = "CMB_Taurus.Out"},
+			{time = 0.7, snd = "CMB_AKM.ClipOutRattle"},
+			{time = 1.9, snd = "CMB_Taurus.In"},
+			{time = 2.8, snd = "CMB_Taurus.Close"},
+			{time = 3.4, snd = "CMB_Uni.Tap"}
+		},
+		["FullHipReload"] = {
 			{time = 0.3, snd = "CMB_Taurus.Open"},
 			{time = 0.55, snd = "CMB_Taurus.Out"},
 			{time = 0.7, snd = "CMB_AKM.ClipOutRattle"},
@@ -78,11 +94,11 @@ SWEP.VMData = {
 		},
 		["World"] = {
 			["Pos"] = Vector(-4,12,-7),
-			["Ang"] = Vector(-40,2,0)		
+			["Ang"] = Vector(-40,2,0)
 		},
 		["Recoil"] = {
 			["Pos"] = Vector(0,1,0.1),
-			["Ang"] = Vector(-1.6,0,0)	
+			["Ang"] = Vector(-1.6,0,0)
 		}
 	},
 

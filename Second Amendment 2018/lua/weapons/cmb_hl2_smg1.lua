@@ -56,6 +56,14 @@ SWEP.VMData = {
 			{time = 0.3, snd = "CMB_SMG1.ClipOut"},
 			{time = 1.15, snd = "CMB_SMG1.ClipIn"}
 		},
+		["FullHipReload"] = {
+			{time = 0.3, snd = "CMB_SMG1.ClipOut"},
+			{time = 1.15, snd = "CMB_SMG1.ClipIn"}
+		},
+		["HipReload"] = {
+			{time = 0.3, snd = "CMB_SMG1.ClipOut"},
+			{time = 1.15, snd = "CMB_SMG1.ClipIn"}
+		},
 	},
 
 	["Matrix"] = {

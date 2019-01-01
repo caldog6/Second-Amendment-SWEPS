@@ -86,6 +86,7 @@ SWEP.VMData = {
 		["Draw"] = "",
 		["Reload"] = {},
 		["FullReload"] = {},
+		["FullHipReload"] = {},
 		["Aim"] = {},
 		["Sprint"] = {}
 	},
@@ -270,20 +271,20 @@ function SWEP:MagReload()
 		if FullReload then
 			if Aiming then
 				self:PlayAnimation("FullHipReload")
+				self:PlaySoundSequence("FullHipReload")
 			else
 				self:PlayAnimation("FullReload")
+				self:PlaySoundSequence("FullReload")
 			end
 		else
 			if Aiming then
 				self:PlayAnimation("HipReload")
+				self:PlaySoundSequence("HipReload")
 			else
 				self:PlayAnimation("Reload")
+				self:PlaySoundSequence("Reload")
 			end
 		end
-	end
-
-	if IsFirstTimePredicted() then
-		self:PlaySoundSequence(FullReload and "FullReload" or "Reload")
 	end
 
 	self.Primary.ClipSize = FullReload and self.Primary.MagSize or (self.Primary.MagSize + self.Primary.ChamberSize)
@@ -542,7 +543,6 @@ function SWEP:PrimaryAttack()
 			end
 		end
 	end
-
 	self:ShootBullet()
 
 	self:Recoil()

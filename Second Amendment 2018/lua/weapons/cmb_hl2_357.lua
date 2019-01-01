@@ -48,10 +48,22 @@ SWEP.VMData = {
 			{time = 2.8, snd = "CMB_357.Reload3"},
 			{time = 3.45, snd = "CMB_357.Reload4"}
 		},
+		["HipReload"] = {
+			{time = 0.25, snd = "CMB_357.Reload1"},
+			{time = 1.25, snd = "CMB_357.Reload2"},
+			{time = 2.8, snd = "CMB_357.Reload3"},
+			{time = 3.45, snd = "CMB_357.Reload4"}
+		},
 		["Sprint"] = {
 			{time = 0, snd = "CMB_HL2.Sprint"}
 		},
 		["FullReload"] = {
+			{time = 0.25, snd = "CMB_357.Reload1"},
+			{time = 1.25, snd = "CMB_357.Reload2"},
+			{time = 2.8, snd = "CMB_357.Reload3"},
+			{time = 3.45, snd = "CMB_357.Reload4"}
+		},
+		["FullHipReload"] = {
 			{time = 0.25, snd = "CMB_357.Reload1"},
 			{time = 1.25, snd = "CMB_357.Reload2"},
 			{time = 2.8, snd = "CMB_357.Reload3"},
